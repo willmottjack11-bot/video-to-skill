@@ -68,3 +68,27 @@ Keys are saved to a `.env` file inside the skill folder, on your machine only. T
 - Public Instagram reels only. Private accounts, image posts and carousels won't work.
 - YouTube videos over 30 minutes with captions are transcript-only by default (a frame every few minutes isn't worth the download). Ask for frames if you want them.
 - It never builds a skill on its own. It asks first.
+
+## Make it better
+
+It works as is. These are upgrades you can add when you want to. Paste any of them into Claude Code and it'll do the work.
+
+**Test it on your own videos**
+> Run video-to-skill on one YouTube video with captions, one YouTube Short and one Instagram reel. Tell me what broke or looked wrong.
+
+**Add automated tests**, so you know it still works after you change something
+> Write pytest tests for the scripts in ~/.claude/skills/video-to-skill/scripts. Cover URL detection, the caption cleanup and the setup check. Run them and fix anything that fails.
+
+**Test when it triggers.** If you have Anthropic's skill-creator plugin:
+> Use skill-creator to run evals on video-to-skill. Check it fires on the way I actually ask for it, and stays quiet on things that aren't about videos.
+
+**Add TikTok**
+> Add TikTok support to video-to-skill. yt-dlp already downloads public TikToks, so route them like YouTube Shorts.
+
+**Save captures into your notes app**
+> Change video-to-skill so captures save into my Obsidian vault at <path> instead of ~/video-captures.
+
+**Capture a batch**
+> Capture every link in this list and give me one combined summary of what's worth building.
+
+(Each Instagram reel costs a fraction of a cent, so check the list length before a big batch.)
